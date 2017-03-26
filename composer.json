@@ -1,0 +1,13 @@
+{
+    "require": {
+        "phpunit/phpunit": "4.2.6"
+    },
+     "config": {
+        "bin-dir": "bin/"
+    }, 
+    "autoload": {
+    	"psr-0": {
+    		"JP\\Sistema\\":"src/JP/Sistema"
+    	}
+    }
+}
