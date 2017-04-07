@@ -9,13 +9,33 @@ class MathTest extends \PHPUnit_Framework_TestCase
         $this->assertInstanceOf("JP\Sistema\Math", new \JP\Sistema\Math());
     }
 
-    public function testeSomar()
+    public function somaProvider()
+    {
+        return [
+            [2,2,4],
+            [5,5,10],
+            [12,20,32],
+            [50,-100,-50],
+            [0,2,2],
+        ];
+    }
+
+    /**
+    * @dataProvider somaProvider
+    */
+    public function testeSomar($x, $y, $resultado)
     {
         $m = new \JP\Sistema\Math();
-        $resultado = $m->somar(10, 10);
-        $this->assertEquals(20, $resultado);
+        $calculo = $m->somar($x, $y);
+        $this->assertEquals($resultado, $calculo);
+    }
 
-        $resultado = $m->somar(5, 5);
-        $this->assertEquals(10, $resultado);
+    /**
+    * @expectedException InvalidArgumentException
+    */
+    public function testeNumerico()
+    {
+        $m = new \JP\Sistema\Math();
+        $resultado = $m->somar(10, 'ABC');
     }
 }
