@@ -11,17 +11,23 @@ class CategoriaEntityTest extends \PHPUnit_Framework_TestCase
 
     public function testVerificaGetSet()
     {
-        $categoria = new \JP\Sistema\Entity\CategoriaEntity();
-        //Descricao
-        $categoria->setDescricao("Descrição do produto 1");
-        $this->assertEquals("Descrição do produto 1", $categoria->getDescricao());
+        $categoria = $this->getMockBuilder('\JP\Sistema\Entity\CategoriaEntity')
+                          ->getMock();
+        $categoria->method('getDescricao')
+                  ->willReturn('Descrição do produto 1');
+
+        $this->assertEquals('Descrição do produto 1', $categoria->getDescricao());
     }
     /**
     * @expectedException InvalidArgumentException
     */
     public function testVerificaDescricaoObrigatoria()
     {
-        $produto = new \JP\Sistema\Entity\CategoriaEntity();
-        $produto->setDescricao(null);
+        $categoria = $this->getMockBuilder('\JP\Sistema\Entity\CategoriaEntity')
+                        ->getMock();
+        $categoria->method('setDescricao')
+                  ->will($this->throwException(new \InvalidArgumentException));
+
+        $categoria->setDescricao(null);
     }
 }

@@ -11,17 +11,22 @@ class TagEntityTest extends \PHPUnit_Framework_TestCase
 
     public function testVerificaGetSet()
     {
-        $tag = new \JP\Sistema\Entity\TagEntity();
-        //Descricao
-        $tag->setDescricao("Descrição do produto 1");
-        $this->assertEquals("Descrição do produto 1", $tag->getDescricao());
+        $tag = $this->getMockBuilder('\JP\Sistema\Entity\TagEntity')
+                    ->getMock();
+        $tag->method('getDescricao')
+            ->willReturn('Descrição da tag 1');
+        $this->assertEquals("Descrição da tag 1", $tag->getDescricao());
     }
     /**
     * @expectedException InvalidArgumentException
     */
     public function testVerificaDescricaoObrigatoria()
     {
-        $produto = new \JP\Sistema\Entity\TagEntity();
-        $produto->setDescricao(null);
+        $tag = $this->getMockBuilder('\JP\Sistema\Entity\TagEntity')
+                    ->getMock();
+        $tag->method('setDescricao')
+            ->will($this->throwException(new \InvalidArgumentException));
+
+        $tag->setDescricao(null);
     }
 }
