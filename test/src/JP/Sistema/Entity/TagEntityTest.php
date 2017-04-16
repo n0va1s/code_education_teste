@@ -26,7 +26,6 @@ class TagEntityTest extends \PHPUnit_Framework_TestCase
                     ->getMock();
         $tag->method('setDescricao')
             ->will($this->throwException(new \InvalidArgumentException));
-
         $tag->setDescricao(null);
     }
 }

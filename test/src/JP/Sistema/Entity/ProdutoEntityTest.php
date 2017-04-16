@@ -11,26 +11,35 @@ class ProdutoEntityTest extends \PHPUnit_Framework_TestCase
 
     public function testVerificaGetSet()
     {
-        $produto = new \JP\Sistema\Entity\ProdutoEntity();
-        //Nome
-        $produto->setNome("Produto 1");
-        $this->assertEquals("Produto 1", $produto->getNome());
-        //Descricao
-        $produto->setDescricao("Descrição do produto 1");
-        $this->assertEquals("Descrição do produto 1", $produto->getDescricao());
-        //Valor
-        $produto->setValor(100.00);
+        $produto = $this->getMockBuilder('\JP\Sistema\Entity\ProdutoEntity')
+                        ->getMock();
+        
+        $produto->method('getNome')
+                ->willReturn('Nome do Produto 1');
+        $this->assertEquals('Nome do Produto 1', $produto->getNome());
+
+        $produto->method('getDescricao')
+                ->willReturn('Descrição do produto 1');
+        $this->assertEquals('Descrição do produto 1', $produto->getDescricao());
+
+        $produto->method('getValor')
+                ->willReturn(100.00);
         $this->assertEquals(100.00, $produto->getValor());
-        //Categoria
-        $produto->setCategoria(1);
+
+        $produto->method('getCategoria')
+                ->willReturn(1);
         $this->assertEquals(1, $produto->getCategoria());
     }
+    
     /**
     * @expectedException InvalidArgumentException
     */
     public function testVerificaValorInvalido()
     {
-        $produto = new \JP\Sistema\Entity\ProdutoEntity();
-        $produto->setValor("ABC");
+        $produto = $this->getMockBuilder('\JP\Sistema\Entity\ProdutoEntity')
+                    ->getMock();
+        $produto->method('setValor')
+                ->will($this->throwException(new \InvalidArgumentException));
+        $produto->setValor('ABC');
     }
 }

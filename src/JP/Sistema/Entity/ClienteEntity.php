@@ -70,7 +70,7 @@ class ClienteEntity
     {
         $emailValido = filter_var($email, FILTER_VALIDATE_EMAIL);
         if (!$emailValido) {
-             throw new \InvalidArgumentException();
+            throw new \InvalidArgumentException();
         }
         $this->email = $email;
     }

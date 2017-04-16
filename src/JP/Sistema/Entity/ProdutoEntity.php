@@ -79,8 +79,8 @@ class ProdutoEntity
 
     public function setDescricao($descricao)
     {
-        if (!isset($descricao)) {
-            throw new \InvalidArgumentException();
+        if (empty($descricao)) {
+            throw new \InvalidArgumentException('Descrição não informada', 1);
         }
         $this->descricao = $descricao;
     }
@@ -92,9 +92,8 @@ class ProdutoEntity
 
     public function setValor($valor)
     {
-        $valorValido = filter_var($valor, FILTER_VALIDATE_FLOAT);
-        if (!$valorValido) {
-             throw new \InvalidArgumentException();
+        if (!is_numeric($valor)) {
+            throw new \InvalidArgumentException('Valor não é numérico', 2);
         }
         $this->valor = $valor;
     }
@@ -106,8 +105,8 @@ class ProdutoEntity
 
     public function setCategoria($categoria)
     {
-        if (!isset($categoria)) {
-            throw new \InvalidArgumentException();
+        if (empty($categoria)) {
+            throw new \InvalidArgumentException('Categoria não informada', 3);
         }
         $this->categoria = $categoria;
     }
