@@ -4,6 +4,20 @@ namespace JP\Sistema\Entity;
 
 class ClienteEntityTest extends \PHPUnit_Framework_TestCase
 {
+    private $cliente;
+    private $foto;
+
+    public function setUp()
+    {
+        $this->foto = $this->getMockBuilder('Symfony\Component\HttpFoundation\File\UploadedFile')
+                           ->enableOriginalConstructor()
+                           ->setConstructorArgs([tempnam(sys_get_temp_dir(), ''), 'arquivo'])
+                           ->getMock();
+
+        $this->cliente = $this->getMockBuilder('\JP\Sistema\Entity\ClienteEntity')
+                              ->getMock();
+    }
+
     public function testVerificaTipoClasse()
     {
         $this->assertInstanceOf("JP\Sistema\Entity\ClienteEntity", new \JP\Sistema\Entity\ClienteEntity());
@@ -11,23 +25,21 @@ class ClienteEntityTest extends \PHPUnit_Framework_TestCase
 
     public function testVerificaGetSet()
     {
-
-        $cliente = $this->getMockBuilder('\JP\Sistema\Entity\ClienteEntity')
-                          ->getMock();
-        $cliente->method('getNome')
+        $this->cliente->method('getNome')
                 ->willReturn('João Paulo Cirino Silva de Novais');
+        $this->assertEquals('João Paulo Cirino Silva de Novais', $this->cliente->getNome());
 
-        $this->assertEquals('João Paulo Cirino Silva de Novais', $cliente->getNome());
-
-        $cliente->method('getEmail')
+        $this->cliente->method('getEmail')
                 ->willReturn('jp.trabalho@gmail.com');
-
-        $this->assertEquals('jp.trabalho@gmail.com', $cliente->getEmail());
+        $this->assertEquals('jp.trabalho@gmail.com', $this->cliente->getEmail());
         
-        $cliente->method('getDataCriacao')
+        $this->cliente->method('getDataCriacao')
                 ->willReturn(new \DateTime());
+        $this->assertEquals(new \DateTime(), $this->cliente->getDataCriacao());
 
-        $this->assertEquals(new \DateTime(), $cliente->getDataCriacao());
+        $this->cliente->method('getFoto')
+                ->willReturn($this->foto);
+        $this->assertInstanceOf("Symfony\Component\HttpFoundation\File\UploadedFile", $this->cliente->getFoto());
     }
 
     /**
@@ -35,10 +47,8 @@ class ClienteEntityTest extends \PHPUnit_Framework_TestCase
     */
     public function testVerificaEmailInvalido()
     {
-        $cliente = $this->getMockBuilder('\JP\Sistema\Entity\ClienteEntity')
-                        ->getMock();
-        $cliente->method('setEmail')
+        $this->cliente->method('setEmail')
                 ->will($this->throwException(new \InvalidArgumentException));
-        $cliente->setEmail("jp.trabalhogmail.com");
+        $this->cliente->setEmail("jp.trabalhogmail.com");
     }
 }

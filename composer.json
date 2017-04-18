@@ -17,5 +17,9 @@
     	"psr-4": {
     		"JP\\Sistema\\":"src/JP/Sistema"
     	}
+    },
+    "require-dev": {
+        "symfony/browser-kit": "^3.2",
+        "symfony/css-selector": "^3.2"
     }
 }
