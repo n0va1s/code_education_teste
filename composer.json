@@ -7,8 +7,7 @@
         "symfony/twig-bridge": "^3.2",
         "doctrine/dbal": "^2.5",
         "doctrine/orm": "^2.5",
-        "gedmo/doctrine-extensions": "^2.4",
-        "phpunit/phpunit": "4.2.6"
+        "gedmo/doctrine-extensions": "^2.4"
     },
     "config": {
         "bin-dir": "bin/"
@@ -20,6 +19,7 @@
     },
     "require-dev": {
         "symfony/browser-kit": "^3.2",
-        "symfony/css-selector": "^3.2"
+        "symfony/css-selector": "^3.2",
+        "phpunit/phpunit": "4.2.6"
     }
 }
