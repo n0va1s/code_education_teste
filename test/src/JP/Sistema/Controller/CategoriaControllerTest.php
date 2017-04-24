@@ -11,10 +11,11 @@ class CategoriaControllerTest extends WebTestCase
 
     public function createApplication()
     {
-         $app = require __DIR__.'/../../../../app.php';
-         $app['debug'] = true;
-         unset($app['exception_handler']);
-         return $app;
+         //$app = require __DIR__.'/../../../../app.php';
+        $ctrl = require __DIR__.'/../../../../../src/JP/Sistema/Controller/CategoriaController.php';
+        //$app['debug'] = true;
+        unset($ctrl['exception_handler']);
+        return $ctrl;
     }
 
     public function setUp()
@@ -22,8 +23,8 @@ class CategoriaControllerTest extends WebTestCase
         parent::setUp();
         $app['session.test'] = true;
         //$this->headers = array('CONTENT_TYPE' => 'application/json',);
-        $this->client = self::createClient();
-        //$this->client = self::createClient(array('SERVER_NAME'=>'127.0.0.1', 'SERVER_PORT'=>'8888'));
+        //$this->client = $this->createClient();
+        $this->client = $this->createClient();
         //var_dump($this->client);
     }
 
