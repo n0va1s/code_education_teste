@@ -32,36 +32,31 @@ class CategoriaController implements ControllerProviderInterface
 
         //api
         $ctrl->get('/api/listar/json', function () use ($app) {
-            $srv = $app['categoria_service'];
-            $resultado = $srv->fetchall();
+            $resultado = $app['categoria_service']->fetchall();
             return $app->json($resultado);
         })->bind('listarCategoriaJson');
 
         $ctrl->get('/api/listar/{id}', function ($id) use ($app) {
-            $srv = $app['categoria_service'];
-            $resultado = $srv->findById($id);
+            $resultado = $app['categoria_service']->findById($id);
             return $app->json($resultado);
         })->bind('listarCategoriaIdJson')
         ->assert('id', '\d+');
 
         $ctrl->post('/api/inserir', function (Request $req) use ($app) {
             $dados = $req->request->all();
-            $srv = $app['categoria_service'];
-            $resultado = $srv->save($dados);
+            $resultado = $app['categoria_service']->save($dados);
             return $app->json($resultado);
         })->bind('inserirCategoriaJson');
 
         $ctrl->put('/api/atualizar/{id}', function (Request $req) use ($app) {
             $dados = $req->request->all();
-            $srv = $app['categoria_service'];
-            $resultado = $srv->save($dados);
+            $resultado = $app['categoria_service']->save($dados);
             return $app->json($resultado);
         })->bind('atualizarCategoriaJson')
         ->assert('id', '\d+');
 
         $ctrl->delete('/api/apagar/{id}', function ($id) use ($app) {
-            $srv = $app['categoria_service'];
-            $resultado = $srv->delete($id);
+            $resultado = $app['categoria_service']->delete($id);
             return $app->json($resultado);
         })->bind('apagarCategoriaJson')
         ->assert('id', '\d+');

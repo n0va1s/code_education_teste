@@ -19,13 +19,21 @@ class CategoriaControllerTest extends WebTestCase
 
     public function testIndexCategoria()
     {
-        $this->client = static::createClient([], [
-            'HTTP_HOST'        => 'localhost',
-            'HTTP_SERVER_PORT' => '8888',
-        ]);
-        //$this->client->followRedirects(true);
+        $this->client = static::createClient([], ['HTTP_HOST'=>'localhost:8888']);
+        //$this->client = static::createClient();
         $this->crawler = $this->client->request('GET', '/categoria');
-        $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
+        //$this->crawler = $this->client->request('GET', 'http://localhost:8888/categoria');
+        /*
+        if (!$this->client->getResponse()->isOk()) {
+            $block = $this->crawler->filter('div.text-exception > h1');
+            $error = $block->text();
+            var_dump($error);
+        }
+        */
+        //$this->client->followRedirects(true);
+        //$this->assertTrue($this->client->getResponse()->isRedirect('/categoria/'));
+        $this->assertEquals(200, $this->client->getResponse()->getStatusCode(), "HTTP status code nao confere");
+        //$this->assertContains('Módulo Categoria (API)',$this->client->getResponse()->getContent());
         //$this->assertTrue($this->client->getResponse()->headers->contains('Content-Type', 'application/json');
         //$this->assertCount(1, $this->crawler->filter('p:contains("Módulo Categoria (API)")'));
     }
