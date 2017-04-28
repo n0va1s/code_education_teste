@@ -61,6 +61,7 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
     'twig.path' => __DIR__.'/views',
 ));
 
-//Foi para o core do Silex 2.0
-//$app->register(new Silex\Provider\UrlGeneratorServiceProvider());
-
+$app->mount('/cliente', new JP\Sistema\Controller\ClienteController($em));
+$app->mount('/produto', new JP\Sistema\Controller\ProdutoController($em));
+$app->mount('/categoria', new JP\Sistema\Controller\CategoriaController($em));
+$app->mount('/tag', new JP\Sistema\Controller\TagController($em));

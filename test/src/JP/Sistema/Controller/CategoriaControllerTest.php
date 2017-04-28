@@ -11,27 +11,21 @@ class CategoriaControllerTest extends WebTestCase
 
     public function createApplication()
     {
-         //$app = require __DIR__.'/../../../../app.php';
-        $ctrl = require __DIR__.'/../../../../../src/JP/Sistema/Controller/CategoriaController.php';
-        //$app['debug'] = true;
-        unset($ctrl['exception_handler']);
-        return $ctrl;
-    }
-
-    public function setUp()
-    {
-        parent::setUp();
+        $app = require __DIR__.'/../../../../app.php';
+        $app['debug'] = true;
         $app['session.test'] = true;
-        //$this->headers = array('CONTENT_TYPE' => 'application/json',);
-        //$this->client = $this->createClient();
-        $this->client = $this->createClient();
-        //var_dump($this->client);
+        return $app;
     }
 
     public function testIndexCategoria()
     {
-        $this->crawler = $this->client->request('GET', 'Categoria');
-        $this->assertTrue($this->client->getResponse()->isOk());
+        $this->client = static::createClient([], [
+            'HTTP_HOST'        => 'localhost',
+            'HTTP_SERVER_PORT' => '8888',
+        ]);
+        //$this->client->followRedirects(true);
+        $this->crawler = $this->client->request('GET', '/categoria');
+        $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
         //$this->assertTrue($this->client->getResponse()->headers->contains('Content-Type', 'application/json');
         //$this->assertCount(1, $this->crawler->filter('p:contains("Módulo Categoria (API)")'));
     }
