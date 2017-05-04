@@ -15,10 +15,7 @@ use Doctrine\Common\ClassLoader;
 $cache = new Doctrine\Common\Cache\ArrayCache;
 $annotationReader = new Doctrine\Common\Annotations\AnnotationReader;
 
-$cachedAnnotationReader = new Doctrine\Common\Annotations\CachedReader(
-    $annotationReader, // use reader
-    $cache // and a cache driver
-);
+$cachedAnnotationReader = new Doctrine\Common\Annotations\CachedReader($annotationReader, $cache);
 
 $annotationDriver = new Doctrine\ORM\Mapping\Driver\AnnotationDriver(
     $cachedAnnotationReader, // our cached annotation reader
@@ -53,7 +50,14 @@ $em = EntityManager::create(
     $config,
     $evm
 );
-
+/*
+ini_set('display_errors', 1);
+error_reporting(-1);
+ErrorHandler::register();
+if ('cli' !== php_sapi_name()) {
+    ExceptionHandler::register();
+}
+*/
 $app = new \Silex\Application();
 $app['debug'] = true;
 
@@ -61,6 +65,9 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
     'twig.path' => __DIR__.'/views',
 ));
 
+$app->get('/', function () use ($app) {
+    return $app['twig']->render('inicio.twig');
+})->bind('inicio');
 $app->mount('/cliente', new JP\Sistema\Controller\ClienteController($em));
 $app->mount('/produto', new JP\Sistema\Controller\ProdutoController($em));
 $app->mount('/categoria', new JP\Sistema\Controller\CategoriaController($em));

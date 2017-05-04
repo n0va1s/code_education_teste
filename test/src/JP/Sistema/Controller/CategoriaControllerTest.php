@@ -12,29 +12,55 @@ class CategoriaControllerTest extends WebTestCase
     public function createApplication()
     {
         $app = require __DIR__.'/../../../../app.php';
-        $app['debug'] = true;
         $app['session.test'] = true;
         return $app;
     }
 
     public function testIndexCategoria()
     {
-        $this->client = static::createClient([], ['HTTP_HOST'=>'localhost:8888']);
-        //$this->client = static::createClient();
-        $this->crawler = $this->client->request('GET', '/categoria');
-        //$this->crawler = $this->client->request('GET', 'http://localhost:8888/categoria');
-        /*
-        if (!$this->client->getResponse()->isOk()) {
-            $block = $this->crawler->filter('div.text-exception > h1');
-            $error = $block->text();
-            var_dump($error);
-        }
-        */
-        //$this->client->followRedirects(true);
-        //$this->assertTrue($this->client->getResponse()->isRedirect('/categoria/'));
+        $this->client = $this->createClient();
+        $this->client->request('GET', '/categoria/');
         $this->assertEquals(200, $this->client->getResponse()->getStatusCode(), "HTTP status code nao confere");
-        //$this->assertContains('Módulo Categoria (API)',$this->client->getResponse()->getContent());
-        //$this->assertTrue($this->client->getResponse()->headers->contains('Content-Type', 'application/json');
-        //$this->assertCount(1, $this->crawler->filter('p:contains("Módulo Categoria (API)")'));
+        $this->assertContains('Módulo Categoria (API)', $this->client->getResponse()->getContent());
+    }
+
+    public function testListarCategoriaJson()
+    {
+        $this->client = $this->createClient();
+        $this->client->request('GET', '/categoria/api/listar/json');
+        $this->assertEquals(200, $this->client->getResponse()->getStatusCode(), "HTTP status code nao confere");
+        $this->assertTrue($this->client->getResponse()->headers->contains('Content-Type', 'application/json'));
+    }
+
+    public function testListarCategoriaIdJson()
+    {
+        $this->client = $this->createClient();
+        $this->client->request('GET', '/categoria/api/listar/1');
+        $this->assertEquals(200, $this->client->getResponse()->getStatusCode(), "HTTP status code nao confere");
+        $this->assertTrue($this->client->getResponse()->headers->contains('Content-Type', 'application/json'));
+    }
+
+    public function testInserirCategoriaJson()
+    {
+        $this->client = $this->createClient();
+        $this->client->request('POST', '/categoria/api/inserir', array('nomCategoria' => 'Categoria 1'));
+        $this->assertEquals(200, $this->client->getResponse()->getStatusCode(), "HTTP status code nao confere");
+        $this->assertTrue($this->client->getResponse()->headers->contains('Content-Type', 'application/json'));
+    }
+
+    public function testAtualizarCategoriaJson()
+    {
+        $this->client = $this->createClient();
+        $this->client->request('PUT', '/categoria/api/atualizar/1', array('seqCategoria'=>'1', 'nomCategoria'=>'Categoria Nova'));
+        $this->assertEquals(200, $this->client->getResponse()->getStatusCode(), "HTTP status code nao confere");
+        $this->assertTrue($this->client->getResponse()->headers->contains('Content-Type', 'application/json'));
+    }
+
+    public function testApagarCategoriaJson()
+    {
+        $this->client = $this->createClient();
+        $this->client->request('DELETE', '/categoria/api/apagar/1', array('seqCategoria'=>'1'));
+        $this->assertEquals(200, $this->client->getResponse()->getStatusCode(), "HTTP status code nao confere");
+        $this->assertTrue($this->client->getResponse()->headers->contains('Content-Type', 'application/json'));
     }
 }

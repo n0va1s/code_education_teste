@@ -1,5 +1,5 @@
-composer.lock
-composer.phar
+*.lock
+*.phar
 /data/
 /vendor/
 .idea
