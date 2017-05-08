@@ -28,7 +28,7 @@ class CategoriaService
             $categoria->setDescricao($dados['nomCategoria']);
         }
         $this->em->flush();
-        return $categoria->getId();
+        return $this->toArray($categoria);
     }
 
     public function delete(int $id)

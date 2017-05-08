@@ -4,7 +4,7 @@ namespace JP\Sistema\Controller;
 
 use Silex\WebTestCase;
 
-class CategoriaControllerTest extends WebTestCase
+class TagControllerTest extends WebTestCase
 {
     private $client;
     
@@ -21,16 +21,16 @@ class CategoriaControllerTest extends WebTestCase
         $this->client = static::createClient();
     }
 
-    public function testIndexCategoriaAPP()
+    public function testIndexTagAPP()
     {
-        $this->client->request('GET', '/categoria/');
+        $this->client->request('GET', '/tag/');
         $this->assertEquals(200, $this->client->getResponse()->getStatusCode(), "HTTP status code nao confere");
-        $this->assertContains('Módulo Categoria (API)', $this->client->getResponse()->getContent());
+        $this->assertContains('Módulo Tag (API)', $this->client->getResponse()->getContent());
     }
 
-    public function testInserirCategoriaAPI()
+    public function testInserirTagAPI()
     {
-        $this->client->request('POST', '/categoria/api/inserir', array('nomCategoria' => 'Categoria 1'));
+        $this->client->request('POST', '/tag/api/inserir', array('nomTag' => 'Tag 1'));
         $this->assertEquals(200, $this->client->getResponse()->getStatusCode(), "HTTP status code nao confere");
         $this->assertTrue($this->client->getResponse()->headers->contains('Content-Type', 'application/json'));
         $dados = json_decode($this->client->getResponse()->getContent(), true);
@@ -38,23 +38,23 @@ class CategoriaControllerTest extends WebTestCase
         return $dados['id'];
     }
     /**
-     * @depends testInserirCategoriaAPI
+     * @depends testInserirTagAPI
      */
-    public function testAtualizarCategoriaAPI(int $id)
+    public function testAtualizarTagAPI(int $id)
     {
-        $this->client->request('PUT', '/categoria/api/atualizar/'.$id, array('seqCategoria'=>$id, 'nomCategoria'=>'Categoria Nova'));
+        $this->client->request('PUT', '/tag/api/atualizar/'.$id, array('seqTag'=>$id, 'nomTag'=>'Tag Nova'));
         $this->assertEquals(200, $this->client->getResponse()->getStatusCode(), "HTTP status code nao confere");
         $this->assertTrue($this->client->getResponse()->headers->contains('Content-Type', 'application/json'));
         $dados = json_decode($this->client->getResponse()->getContent(), true);
         $this->assertEquals(1, count($dados['id']));
-        $this->assertContains('Categoria Nova', $dados['descricao']);
+        $this->assertContains('Tag Nova', $dados['descricao']);
     }
     /**
-     * @depends testInserirCategoriaAPI
+     * @depends testInserirTagAPI
      */
-    public function testListarCategoriaIdAPI(int $id)
+    public function testListarTagIdAPI(int $id)
     {
-        $this->client->request('GET', '/categoria/api/listar/'.$id);
+        $this->client->request('GET', '/tag/api/listar/'.$id);
         $this->assertEquals(200, $this->client->getResponse()->getStatusCode(), "HTTP status code nao confere");
         $this->assertTrue($this->client->getResponse()->headers->contains('Content-Type', 'application/json'));
         $dados = json_decode($this->client->getResponse()->getContent(), true);
@@ -63,19 +63,19 @@ class CategoriaControllerTest extends WebTestCase
         $this->assertArrayHasKey('descricao', $dados[0]);
     }
     /**
-     * @depends testInserirCategoriaAPI
+     * @depends testInserirTagAPI
      */
-    public function testApagarCategoriaAPI(int $id)
+    public function testApagarTagAPI(int $id)
     {
-        $this->client->request('DELETE', '/categoria/api/apagar/'.$id, array('seqCategoria'=>$id));
+        $this->client->request('DELETE', '/tag/api/apagar/'.$id, array('seqTag'=>$id));
         $this->assertEquals(200, $this->client->getResponse()->getStatusCode(), "HTTP status code nao confere");
         $this->assertTrue($this->client->getResponse()->headers->contains('Content-Type', 'application/json'));
         $this->assertTrue((boolean)$this->client->getResponse()->getContent());
     }
 
-    public function testListarCategoriaAPI()
+    public function testListarTagAPI()
     {
-        $this->client->request('GET', '/categoria/api/listar/json');
+        $this->client->request('GET', '/tag/api/listar/json');
         $this->assertEquals(200, $this->client->getResponse()->getStatusCode(), "HTTP status code nao confere");
         $this->assertTrue($this->client->getResponse()->headers->contains('Content-Type', 'application/json'));
         $c = count(json_decode($this->client->getResponse()->getContent(), true));

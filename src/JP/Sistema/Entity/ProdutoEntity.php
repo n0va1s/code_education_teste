@@ -116,4 +116,9 @@ class ProdutoEntity
         $this->tags->add($tag);
         return $this;
     }
+
+    public function getTag()
+    {
+        return $this->tags;
+    }
 }

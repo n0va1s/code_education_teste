@@ -36,19 +36,23 @@ class ProdutoController implements ControllerProviderInterface
 
         $ctrl->get('/alterar/{id}', function ($id) use ($app) {
             $produto = $app['produto_service']->findById($id);
-            return $app['twig']->render('produto_cadastro.twig', array('produto'=>$produto));
+            $app['twig']->render('produto_cadastro.twig', array('produto'=>$produto));
+            return $app->json($produto);
         })->bind('alterarProduto')
         ->assert('id', '\d+');
 
         $ctrl->post('/gravar', function (Request $req) use ($app) {
             $dados = $req->request->all();
             $produto = $app['produto_service']->save($dados);
-            return $app->redirect($app['url_generator']->generate('listarProdutoHtml'));
+            $app->redirect($app['url_generator']->generate('listarProdutoHtml'));
+            return $app->json($produto);
+            //return $app->redirect($app['url_generator']->generate('listarProdutoHtml'));
         })->bind('gravarProduto');
 
         $ctrl->get('/excluir/{id}', function ($id) use ($app) {
             $resultado = $app['produto_service']->delete($id);
-            return $app['twig']->render('produto_lista.twig', array('produtos'=>$resultado));
+            $app['twig']->render('produto_lista.twig', array('produtos'=>$resultado));
+            return $resultado;
         })->bind('excluirProduto')
         ->assert('id', '\d+');
 
@@ -56,14 +60,14 @@ class ProdutoController implements ControllerProviderInterface
             return $app['twig']->render('produto_lista.twig', ['produtos'=>$app['produto_service']->fetchall()]);
         })->bind('listarProdutoHtml');
 
-        $ctrl->get('/listar/paginado/{qtd}', function ($qtd) use ($app) {
+        //api
+        $ctrl->get('/api/listar/paginado/{qtd}', function ($qtd) use ($app) {
             $resultado = $app['produto_service']->fetchLimit($qtd);
             return $app->json($resultado);
         })->bind('listarProdutoPaginado')
         ->assert('id', '\d+')
         ->value('qtd', 5); //limite padrao;
         
-        //api
         $ctrl->get('/api/listar/json', function () use ($app) {
             $resultado = $app['produto_service']->fetchall();
             return $app->json($resultado);

@@ -79,7 +79,7 @@ class ProdutoService
         $produto = $this->em->createQuery('select p from \JP\Sistema\Entity\ProdutoEntity p where p.id = :id')
                    ->setParameter('id', $id)
                    ->getArrayResult();
-        return $produto;
+        return $produto[0];
     }
 
     public function toArray(ProdutoEntity $produto)
@@ -89,6 +89,8 @@ class ProdutoService
             'nome' => $produto->getNome() ,
             'descricao' => $produto->getDescricao(),
             'valor' => $produto->getValor(),
+            'categoria' => $produto->getCategoria(),
+            'tag' => $produto->getTag()
             );
     }
 }
