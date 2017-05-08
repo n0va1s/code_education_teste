@@ -37,11 +37,18 @@ class ProdutoControllerTest extends WebTestCase
 
     public function testGravarProdutoAPP()
     {
+        /*
+        $produto = $this->getMockBuilder('\JP\Sistema\Entity\ProdutoEntity')->getMock();
+        $produto->method('getNome')->willReturn('Nome do Produto 1');
+        $produto->method('getDescricao')->willReturn('Descrição do Produto 1');
+        $produto->method('getValor')->willReturn('100.00');
+        $produto->method('getCategoria')->willReturn('1');
+        */
+
         $this->client->request('POST', '/produto/gravar', array('nomProduto'=>'Nome do Produto 1',
             'desProduto'=>'Descrição do Produto 1',
-            'valProduto'=>'100',
-            'seqCategoria'=>'56',
-            'seqTag'=>'18'));
+            'valProduto'=>'100.00'));
+
         $this->assertEquals(200, $this->client->getResponse()->getStatusCode(), "HTTP status code nao confere");
         $dados = json_decode($this->client->getResponse()->getContent(), true);
         $this->assertGreaterThan(0, $dados['id']);
@@ -80,9 +87,7 @@ class ProdutoControllerTest extends WebTestCase
     {
         $this->client->request('POST', '/produto/api/inserir', array('nomProduto'=>'Nome do Produto 1',
             'desProduto'=>'Descrição do Produto 1',
-            'valProduto'=>'100',
-            'seqCategoria'=>'56',
-            'seqTag'=>'18'));
+            'valProduto'=>'100'));
         $this->assertEquals(200, $this->client->getResponse()->getStatusCode(), "HTTP status code nao confere");
         $this->assertTrue($this->client->getResponse()->headers->contains('Content-Type', 'application/json'));
         $dados = json_decode($this->client->getResponse()->getContent(), true);
@@ -96,9 +101,7 @@ class ProdutoControllerTest extends WebTestCase
     {
         $this->client->request('PUT', '/produto/api/atualizar/'.$id, array('nomProduto'=>'Nome do Produto 1',
             'desProduto'=>'Descrição do Produto 1',
-            'valProduto'=>'100',
-            'seqCategoria'=>'56',
-            'seqTag'=>'18'));
+            'valProduto'=>'100'));
         $this->assertEquals(200, $this->client->getResponse()->getStatusCode(), "HTTP status code nao confere");
         $this->assertTrue($this->client->getResponse()->headers->contains('Content-Type', 'application/json'));
         $dados = json_decode($this->client->getResponse()->getContent(), true);
