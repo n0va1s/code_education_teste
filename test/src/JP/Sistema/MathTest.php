@@ -4,7 +4,7 @@ namespace JP\Sistema;
 
 class MathTest extends \PHPUnit_Framework_TestCase
 {
-    public function testeVerificaSeOTipoDaClasseEstaCorreto()
+    public function testVerificaSeOTipoDaClasseEstaCorreto()
     {
         $this->assertInstanceOf("JP\Sistema\Math", new \JP\Sistema\Math());
     }
@@ -23,7 +23,7 @@ class MathTest extends \PHPUnit_Framework_TestCase
     /**
     * @dataProvider somaProvider
     */
-    public function testeSomar($x, $y, $resultado)
+    public function testSomar($x, $y, $resultado)
     {
         $m = new \JP\Sistema\Math();
         $calculo = $m->somar($x, $y);
@@ -33,9 +33,43 @@ class MathTest extends \PHPUnit_Framework_TestCase
     /**
     * @expectedException InvalidArgumentException
     */
-    public function testeNumerico()
+    public function testSomarNumerico()
     {
         $m = new \JP\Sistema\Math();
         $resultado = $m->somar(10, 'ABC');
+    }
+
+    public function romanoProvider()
+    {
+        return [
+            ['I', 1],
+            ['IV', 4],
+            ['V', 5],
+            ['VII', 7],
+            ['X', 10],
+            ['L', 50],
+            ['C', 100],
+            ['DC', 600],
+            ['M', 1000]
+        ];
+    }
+
+    /**
+    * @dataProvider romanoProvider
+    */
+    public function testArabicoParaRomano($romano, $arabico)
+    {
+        $m = new \JP\Sistema\Math();
+        $resultado = $m->converterRomano($arabico);
+        $this->assertEquals($romano, $resultado);
+    }
+
+    /**
+    * @expectedException InvalidArgumentException
+    */
+    public function testArabicoNumerico()
+    {
+        $m = new \JP\Sistema\Math();
+        $resultado = $m->converterRomano('ABC');
     }
 }

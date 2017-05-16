@@ -80,9 +80,7 @@ class ProdutoControllerTest extends WebTestCase
     {
         $this->client->request('POST', '/produto/api/inserir', array('nomProduto'=>'Nome do Produto 1',
             'desProduto'=>'Descrição do Produto 1',
-            'valProduto'=>'100',
-            'seqCategoria'=>'56',
-            'seqTag'=>'18'));
+            'valProduto'=>'100'));
         $this->assertEquals(200, $this->client->getResponse()->getStatusCode(), "HTTP status code nao confere");
         $this->assertTrue($this->client->getResponse()->headers->contains('Content-Type', 'application/json'));
         $dados = json_decode($this->client->getResponse()->getContent(), true);
@@ -96,9 +94,7 @@ class ProdutoControllerTest extends WebTestCase
     {
         $this->client->request('PUT', '/produto/api/atualizar/'.$id, array('nomProduto'=>'Nome do Produto 1',
             'desProduto'=>'Descrição do Produto 1',
-            'valProduto'=>'100',
-            'seqCategoria'=>'56',
-            'seqTag'=>'18'));
+            'valProduto'=>'100'));
         $this->assertEquals(200, $this->client->getResponse()->getStatusCode(), "HTTP status code nao confere");
         $this->assertTrue($this->client->getResponse()->headers->contains('Content-Type', 'application/json'));
         $dados = json_decode($this->client->getResponse()->getContent(), true);

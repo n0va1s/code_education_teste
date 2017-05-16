@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Dashboard for /home/novais/public-html/code_education_teste/vendor/silex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../../../../../../css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../../../../../css/nv.d3.min.css" rel="stylesheet">
+  <link href="../../../../../../css/style.css" rel="stylesheet">
+  <!--[if lt IE 9]>
+  <script src="../../../../../../js/html5shiv.min.js"></script>
+  <script src="../../../../../../js/respond.min.js"></script>
+  <![endif]-->
+ </head>
+ <body>
+  <header>
+   <div class="container">
+    <div class="row">
+     <div class="col-md-12">
+      <ol class="breadcrumb">
+        <li><a href="../../../../../../index.html"></a></li>
+        <li><a href="../../../../../index.html">home</a></li>
+        <li><a href="../../../../index.html">novais</a></li>
+        <li><a href="../../../index.html">public-html</a></li>
+        <li><a href="../../index.html">code_education_teste</a></li>
+        <li><a href="../index.html">vendor</a></li>
+        <li><a href="index.html">silex</a></li>
+        <li class="active">(Dashboard)</li>
+
+      </ol>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="container">
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Classes</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="classCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="classComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="silex/src/Silex/Provider/Routing/RedirectableUrlMatcher.php.html#22">RedirectableUrlMatcher</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="silex/src/Silex/CallbackResolver.php.html#16">CallbackResolver</a></td><td class="text-right">16%</td></tr>
+       <tr><td><a href="silex/src/Silex/Route.php.html#21">Route</a></td><td class="text-right">26%</td></tr>
+       <tr><td><a href="silex/src/Silex/ExceptionHandler.php.html#26">ExceptionHandler</a></td><td class="text-right">30%</td></tr>
+       <tr><td><a href="silex/src/Silex/Application.php.html#42">Application</a></td><td class="text-right">50%</td></tr>
+       <tr><td><a href="silex/src/Silex/EventListener/MiddlewareListener.php.html#26">MiddlewareListener</a></td><td class="text-right">50%</td></tr>
+       <tr><td><a href="silex/src/Silex/Provider/Twig/RuntimeLoader.php.html#21">RuntimeLoader</a></td><td class="text-right">50%</td></tr>
+       <tr><td><a href="silex/src/Silex/AppArgumentValueResolver.php.html#23">AppArgumentValueResolver</a></td><td class="text-right">60%</td></tr>
+       <tr><td><a href="silex/src/Silex/Controller.php.html#34">Controller</a></td><td class="text-right">60%</td></tr>
+       <tr><td><a href="silex/src/Silex/ControllerCollection.php.html#40">ControllerCollection</a></td><td class="text-right">64%</td></tr>
+       <tr><td><a href="silex/src/Silex/Provider/HttpKernelServiceProvider.php.html#28">HttpKernelServiceProvider</a></td><td class="text-right">72%</td></tr>
+       <tr><td><a href="silex/src/Silex/EventListener/ConverterListener.php.html#25">ConverterListener</a></td><td class="text-right">72%</td></tr>
+       <tr><td><a href="silex/src/Silex/Provider/TwigServiceProvider.php.html#35">TwigServiceProvider</a></td><td class="text-right">79%</td></tr>
+       <tr><td><a href="silex/src/Silex/Provider/Routing/LazyRequestMatcher.php.html#24">LazyRequestMatcher</a></td><td class="text-right">85%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="silex/src/Silex/Application.php.html#42">Application</a></td><td class="text-right">323</td></tr>
+       <tr><td><a href="silex/src/Silex/Provider/Routing/RedirectableUrlMatcher.php.html#22">RedirectableUrlMatcher</a></td><td class="text-right">110</td></tr>
+       <tr><td><a href="silex/src/Silex/CallbackResolver.php.html#16">CallbackResolver</a></td><td class="text-right">55</td></tr>
+       <tr><td><a href="silex/src/Silex/ControllerCollection.php.html#40">ControllerCollection</a></td><td class="text-right">54</td></tr>
+       <tr><td><a href="silex/src/Silex/EventListener/MiddlewareListener.php.html#26">MiddlewareListener</a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="silex/src/Silex/Provider/TwigServiceProvider.php.html#35">TwigServiceProvider</a></td><td class="text-right">16</td></tr>
+       <tr><td><a href="silex/src/Silex/Controller.php.html#34">Controller</a></td><td class="text-right">14</td></tr>
+       <tr><td><a href="silex/src/Silex/ExceptionHandler.php.html#26">ExceptionHandler</a></td><td class="text-right">9</td></tr>
+       <tr><td><a href="silex/src/Silex/Provider/HttpKernelServiceProvider.php.html#28">HttpKernelServiceProvider</a></td><td class="text-right">8</td></tr>
+       <tr><td><a href="silex/src/Silex/EventListener/ConverterListener.php.html#25">ConverterListener</a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="silex/src/Silex/AppArgumentValueResolver.php.html#23">AppArgumentValueResolver</a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="silex/src/Silex/Provider/Twig/RuntimeLoader.php.html#21">RuntimeLoader</a></td><td class="text-right">4</td></tr>
+       <tr><td><a href="silex/src/Silex/Provider/Routing/LazyRequestMatcher.php.html#24">LazyRequestMatcher</a></td><td class="text-right">4</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Methods</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="methodCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="methodComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="silex/src/Silex/AppArgumentValueResolver.php.html#43"><abbr title="AppArgumentValueResolver::resolve">resolve</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="silex/src/Silex/Provider/Routing/RedirectableUrlMatcher.php.html#27"><abbr title="RedirectableUrlMatcher::redirect">redirect</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="silex/src/Silex/CallbackResolver.php.html#48"><abbr title="CallbackResolver::convertCallback">convertCallback</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="silex/src/Silex/CallbackResolver.php.html#74"><abbr title="CallbackResolver::resolveCallback">resolveCallback</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="silex/src/Silex/Controller.php.html#109"><abbr title="Controller::generateRouteName">generateRouteName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="silex/src/Silex/ControllerCollection.php.html#162"><abbr title="ControllerCollection::options">options</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="silex/src/Silex/ControllerCollection.php.html#175"><abbr title="ControllerCollection::patch">patch</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="silex/src/Silex/ControllerCollection.php.html#180"><abbr title="ControllerCollection::__call">__call</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="silex/src/Silex/ExceptionHandler.php.html#35"><abbr title="ExceptionHandler::onSilexError">onSilexError</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="silex/src/Silex/Provider/Twig/RuntimeLoader.php.html#35"><abbr title="RuntimeLoader::load">load</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="silex/src/Silex/Application.php.html#471"><abbr title="Application::run">run</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="silex/src/Silex/Route.php.html#51"><abbr title="Route::run">run</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="silex/src/Silex/Route.php.html#96"><abbr title="Route::convert">convert</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="silex/src/Silex/Route.php.html#126"><abbr title="Route::host">host</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="silex/src/Silex/Route.php.html#138"><abbr title="Route::requireHttp">requireHttp</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="silex/src/Silex/Route.php.html#150"><abbr title="Route::requireHttps">requireHttps</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="silex/src/Silex/Route.php.html#164"><abbr title="Route::before">before</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="silex/src/Silex/Route.php.html#180"><abbr title="Route::after">after</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="silex/src/Silex/CallbackResolver.php.html#34"><abbr title="CallbackResolver::isValid">isValid</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="silex/src/Silex/Route.php.html#196"><abbr title="Route::when">when</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="silex/src/Silex/Application.php.html#208"><abbr title="Application::patch">patch</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="silex/src/Silex/Application.php.html#298"><abbr title="Application::finish">finish</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="silex/src/Silex/Application.php.html#302"><abbr title="Application::anonymous function">anonymous function</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="silex/src/Silex/Application.php.html#245"><abbr title="Application::before">before</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="silex/src/Silex/Application.php.html#195"><abbr title="Application::options">options</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="silex/src/Silex/Application.php.html#271"><abbr title="Application::after">after</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="silex/src/Silex/Application.php.html#432"><abbr title="Application::sendFile">sendFile</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="silex/src/Silex/Application.php.html#182"><abbr title="Application::delete">delete</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="silex/src/Silex/Application.php.html#221"><abbr title="Application::on">on</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="silex/src/Silex/Application.php.html#169"><abbr title="Application::put">put</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="silex/src/Silex/Application.php.html#314"><abbr title="Application::abort">abort</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="silex/src/Silex/Application.php.html#336"><abbr title="Application::error">error</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="silex/src/Silex/Application.php.html#353"><abbr title="Application::view">view</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="silex/src/Silex/Application.php.html#156"><abbr title="Application::post">post</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="silex/src/Silex/Application.php.html#130"><abbr title="Application::match">match</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="silex/src/Silex/Application.php.html#388"><abbr title="Application::stream">stream</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="silex/src/Silex/Application.php.html#403"><abbr title="Application::escape">escape</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="silex/src/Silex/EventListener/MiddlewareListener.php.html#45"><abbr title="MiddlewareListener::onKernelRequest">onKernelRequest</abbr></a></td><td class="text-right">41%</td></tr>
+       <tr><td><a href="silex/src/Silex/EventListener/MiddlewareListener.php.html#70"><abbr title="MiddlewareListener::onKernelResponse">onKernelResponse</abbr></a></td><td class="text-right">45%</td></tr>
+       <tr><td><a href="silex/src/Silex/ControllerCollection.php.html#67"><abbr title="ControllerCollection::mount">mount</abbr></a></td><td class="text-right">55%</td></tr>
+       <tr><td><a href="silex/src/Silex/EventListener/ConverterListener.php.html#47"><abbr title="ConverterListener::onKernelController">onKernelController</abbr></a></td><td class="text-right">57%</td></tr>
+       <tr><td><a href="silex/src/Silex/Provider/HttpKernelServiceProvider.php.html#33"><abbr title="HttpKernelServiceProvider::register">register</abbr></a></td><td class="text-right">61%</td></tr>
+       <tr><td><a href="silex/src/Silex/Application.php.html#447"><abbr title="Application::mount">mount</abbr></a></td><td class="text-right">66%</td></tr>
+       <tr><td><a href="silex/src/Silex/ControllerCollection.php.html#211"><abbr title="ControllerCollection::doFlush">doFlush</abbr></a></td><td class="text-right">68%</td></tr>
+       <tr><td><a href="silex/src/Silex/Provider/Routing/LazyRequestMatcher.php.html#38"><abbr title="LazyRequestMatcher::getRequestMatcher">getRequestMatcher</abbr></a></td><td class="text-right">75%</td></tr>
+       <tr><td><a href="silex/src/Silex/ControllerCollection.php.html#200"><abbr title="ControllerCollection::flush">flush</abbr></a></td><td class="text-right">75%</td></tr>
+       <tr><td><a href="silex/src/Silex/Controller.php.html#77"><abbr title="Controller::bind">bind</abbr></a></td><td class="text-right">75%</td></tr>
+       <tr><td><a href="silex/src/Silex/Controller.php.html#88"><abbr title="Controller::__call">__call</abbr></a></td><td class="text-right">75%</td></tr>
+       <tr><td><a href="silex/src/Silex/Provider/TwigServiceProvider.php.html#37"><abbr title="TwigServiceProvider::register">register</abbr></a></td><td class="text-right">78%</td></tr>
+       <tr><td><a href="silex/src/Silex/Application.php.html#101"><abbr title="Application::boot">boot</abbr></a></td><td class="text-right">88%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="silex/src/Silex/Provider/Routing/RedirectableUrlMatcher.php.html#27"><abbr title="RedirectableUrlMatcher::redirect">redirect</abbr></a></td><td class="text-right">90</td></tr>
+       <tr><td><a href="silex/src/Silex/Application.php.html#271"><abbr title="Application::after">after</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="silex/src/Silex/Provider/TwigServiceProvider.php.html#37"><abbr title="TwigServiceProvider::register">register</abbr></a></td><td class="text-right">15</td></tr>
+       <tr><td><a href="silex/src/Silex/CallbackResolver.php.html#34"><abbr title="CallbackResolver::isValid">isValid</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="silex/src/Silex/Application.php.html#245"><abbr title="Application::before">before</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="silex/src/Silex/ControllerCollection.php.html#180"><abbr title="ControllerCollection::__call">__call</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="silex/src/Silex/CallbackResolver.php.html#48"><abbr title="CallbackResolver::convertCallback">convertCallback</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="silex/src/Silex/EventListener/MiddlewareListener.php.html#45"><abbr title="MiddlewareListener::onKernelRequest">onKernelRequest</abbr></a></td><td class="text-right">9</td></tr>
+       <tr><td><a href="silex/src/Silex/EventListener/MiddlewareListener.php.html#70"><abbr title="MiddlewareListener::onKernelResponse">onKernelResponse</abbr></a></td><td class="text-right">9</td></tr>
+       <tr><td><a href="silex/src/Silex/Application.php.html#447"><abbr title="Application::mount">mount</abbr></a></td><td class="text-right">7</td></tr>
+       <tr><td><a href="silex/src/Silex/ControllerCollection.php.html#211"><abbr title="ControllerCollection::doFlush">doFlush</abbr></a></td><td class="text-right">7</td></tr>
+       <tr><td><a href="silex/src/Silex/Provider/HttpKernelServiceProvider.php.html#33"><abbr title="HttpKernelServiceProvider::register">register</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="silex/src/Silex/Application.php.html#471"><abbr title="Application::run">run</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="silex/src/Silex/Provider/Twig/RuntimeLoader.php.html#35"><abbr title="RuntimeLoader::load">load</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="silex/src/Silex/Application.php.html#221"><abbr title="Application::on">on</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="silex/src/Silex/Application.php.html#403"><abbr title="Application::escape">escape</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="silex/src/Silex/ExceptionHandler.php.html#35"><abbr title="ExceptionHandler::onSilexError">onSilexError</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="silex/src/Silex/CallbackResolver.php.html#74"><abbr title="CallbackResolver::resolveCallback">resolveCallback</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="silex/src/Silex/ControllerCollection.php.html#67"><abbr title="ControllerCollection::mount">mount</abbr></a></td><td class="text-right">5</td></tr>
+       <tr><td><a href="silex/src/Silex/EventListener/ConverterListener.php.html#47"><abbr title="ConverterListener::onKernelController">onKernelController</abbr></a></td><td class="text-right">5</td></tr>
+       <tr><td><a href="silex/src/Silex/Application.php.html#101"><abbr title="Application::boot">boot</abbr></a></td><td class="text-right">5</td></tr>
+       <tr><td><a href="silex/src/Silex/ControllerCollection.php.html#200"><abbr title="ControllerCollection::flush">flush</abbr></a></td><td class="text-right">2</td></tr>
+       <tr><td><a href="silex/src/Silex/Provider/Routing/LazyRequestMatcher.php.html#38"><abbr title="LazyRequestMatcher::getRequestMatcher">getRequestMatcher</abbr></a></td><td class="text-right">2</td></tr>
+       <tr><td><a href="silex/src/Silex/Controller.php.html#88"><abbr title="Controller::__call">__call</abbr></a></td><td class="text-right">2</td></tr>
+       <tr><td><a href="silex/src/Silex/Controller.php.html#77"><abbr title="Controller::bind">bind</abbr></a></td><td class="text-right">2</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <hr/>
+    <p>
+     <small>Generated by <a href="http://github.com/sebastianbergmann/php-code-coverage" target="_top">PHP_CodeCoverage 2.2.4</a> using <a href="https://secure.php.net/" target="_top">PHP 7.0.15-0ubuntu0.16.04.4</a> and <a href="http://phpunit.de/">PHPUnit 4.2.6</a> at Tue May 16 8:50:58 BRT 2017.</small>
+    </p>
+   </footer>
+  </div>
+  <script src="../../../../../../js/jquery.min.js" type="text/javascript"></script>
+  <script src="../../../../../../js/bootstrap.min.js" type="text/javascript"></script>
+  <script src="../../../../../../js/holder.min.js" type="text/javascript"></script>
+  <script src="../../../../../../js/d3.min.js" type="text/javascript"></script>
+  <script src="../../../../../../js/nv.d3.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+$(document).ready(function() {
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#classCoverageDistribution svg')
+      .datum(getCoverageDistributionData([1,0,1,1,1,0,3,3,3,1,0,3], "Class Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#methodCoverageDistribution svg')
+      .datum(getCoverageDistributionData([37,0,0,0,0,2,2,3,5,1,1,46], "Method Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getCoverageDistributionData(data, label) {
+    var labels = [
+      '0%',
+      '0-10%',
+      '10-20%',
+      '20-30%',
+      '30-40%',
+      '40-50%',
+      '50-60%',
+      '60-70%',
+      '70-80%',
+      '80-90%',
+      '90-100%',
+      '100%'
+    ];
+    var values = [];
+    $.each(labels, function(key) {
+      values.push({x: labels[key], y: data[key]});
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(key, y, e, graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Cyclomatic Complexity');
+
+    d3.select('#classComplexity svg')
+      .datum(getComplexityData([[60,5,"<a href=\"silex\/src\/Silex\/AppArgumentValueResolver.php.html#23\">AppArgumentValueResolver<\/a>"],[50,47,"<a href=\"silex\/src\/Silex\/Application.php.html#42\">Application<\/a>"],[16.666666666667,9,"<a href=\"silex\/src\/Silex\/CallbackResolver.php.html#16\">CallbackResolver<\/a>"],[60,9,"<a href=\"silex\/src\/Silex\/Controller.php.html#34\">Controller<\/a>"],[64,25,"<a href=\"silex\/src\/Silex\/ControllerCollection.php.html#40\">ControllerCollection<\/a>"],[72.727272727273,6,"<a href=\"silex\/src\/Silex\/EventListener\/ConverterListener.php.html#25\">ConverterListener<\/a>"],[50,12,"<a href=\"silex\/src\/Silex\/EventListener\/MiddlewareListener.php.html#26\">MiddlewareListener<\/a>"],[100,7,"<a href=\"silex\/src\/Silex\/EventListener\/StringToResponseListener.php.html#24\">StringToResponseListener<\/a>"],[30,4,"<a href=\"silex\/src\/Silex\/ExceptionHandler.php.html#26\">ExceptionHandler<\/a>"],[100,4,"<a href=\"silex\/src\/Silex\/Provider\/ExceptionHandlerServiceProvider.php.html#11\">ExceptionHandlerServiceProvider<\/a>"],[72,7,"<a href=\"silex\/src\/Silex\/Provider\/HttpKernelServiceProvider.php.html#28\">HttpKernelServiceProvider<\/a>"],[85.714285714286,4,"<a href=\"silex\/src\/Silex\/Provider\/Routing\/LazyRequestMatcher.php.html#24\">LazyRequestMatcher<\/a>"],[0,10,"<a href=\"silex\/src\/Silex\/Provider\/Routing\/RedirectableUrlMatcher.php.html#22\">RedirectableUrlMatcher<\/a>"],[100,5,"<a href=\"silex\/src\/Silex\/Provider\/RoutingServiceProvider.php.html#31\">RoutingServiceProvider<\/a>"],[50,3,"<a href=\"silex\/src\/Silex\/Provider\/Twig\/RuntimeLoader.php.html#21\">RuntimeLoader<\/a>"],[79.62962962963,15,"<a href=\"silex\/src\/Silex\/Provider\/TwigServiceProvider.php.html#35\">TwigServiceProvider<\/a>"],[26.666666666667,12,"<a href=\"silex\/src\/Silex\/Route.php.html#21\">Route<\/a>"]], 'Class Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(key, y, e, graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Method Complexity');
+
+    d3.select('#methodComplexity svg')
+      .datum(getComplexityData([[100,1,"<a href=\"silex\/src\/Silex\/AppArgumentValueResolver.php.html#27\">AppArgumentValueResolver::__construct<\/a>"],[100,3,"<a href=\"silex\/src\/Silex\/AppArgumentValueResolver.php.html#35\">AppArgumentValueResolver::supports<\/a>"],[0,1,"<a href=\"silex\/src\/Silex\/AppArgumentValueResolver.php.html#43\">AppArgumentValueResolver::resolve<\/a>"],[91.666666666667,2,"<a href=\"silex\/src\/Silex\/Application.php.html#59\">Application::__construct<\/a>"],[100,1,"<a href=\"silex\/src\/Silex\/Application.php.html#86\">Application::register<\/a>"],[88.888888888889,5,"<a href=\"silex\/src\/Silex\/Application.php.html#101\">Application::boot<\/a>"],[0,1,"<a href=\"silex\/src\/Silex\/Application.php.html#130\">Application::match<\/a>"],[100,1,"<a href=\"silex\/src\/Silex\/Application.php.html#143\">Application::get<\/a>"],[0,1,"<a href=\"silex\/src\/Silex\/Application.php.html#156\">Application::post<\/a>"],[0,1,"<a href=\"silex\/src\/Silex\/Application.php.html#169\">Application::put<\/a>"],[0,1,"<a href=\"silex\/src\/Silex\/Application.php.html#182\">Application::delete<\/a>"],[0,1,"<a href=\"silex\/src\/Silex\/Application.php.html#195\">Application::options<\/a>"],[0,1,"<a href=\"silex\/src\/Silex\/Application.php.html#208\">Application::patch<\/a>"],[0,2,"<a href=\"silex\/src\/Silex\/Application.php.html#221\">Application::on<\/a>"],[0,1,"<a href=\"silex\/src\/Silex\/Application.php.html#302\">Application::anonymous function<\/a>"],[0,3,"<a href=\"silex\/src\/Silex\/Application.php.html#245\">Application::before<\/a>"],[0,4,"<a href=\"silex\/src\/Silex\/Application.php.html#271\">Application::after<\/a>"],[0,1,"<a href=\"silex\/src\/Silex\/Application.php.html#298\">Application::finish<\/a>"],[0,1,"<a href=\"silex\/src\/Silex\/Application.php.html#314\">Application::abort<\/a>"],[0,1,"<a href=\"silex\/src\/Silex\/Application.php.html#336\">Application::error<\/a>"],[0,1,"<a href=\"silex\/src\/Silex\/Application.php.html#353\">Application::view<\/a>"],[100,1,"<a href=\"silex\/src\/Silex\/Application.php.html#361\">Application::flush<\/a>"],[100,1,"<a href=\"silex\/src\/Silex\/Application.php.html#374\">Application::redirect<\/a>"],[0,1,"<a href=\"silex\/src\/Silex\/Application.php.html#388\">Application::stream<\/a>"],[0,2,"<a href=\"silex\/src\/Silex\/Application.php.html#403\">Application::escape<\/a>"],[100,1,"<a href=\"silex\/src\/Silex\/Application.php.html#417\">Application::json<\/a>"],[0,1,"<a href=\"silex\/src\/Silex\/Application.php.html#432\">Application::sendFile<\/a>"],[66.666666666667,6,"<a href=\"silex\/src\/Silex\/Application.php.html#447\">Application::mount<\/a>"],[0,2,"<a href=\"silex\/src\/Silex\/Application.php.html#471\">Application::run<\/a>"],[100,2,"<a href=\"silex\/src\/Silex\/Application.php.html#488\">Application::handle<\/a>"],[100,1,"<a href=\"silex\/src\/Silex\/Application.php.html#502\">Application::terminate<\/a>"],[100,1,"<a href=\"silex\/src\/Silex\/CallbackResolver.php.html#22\">CallbackResolver::__construct<\/a>"],[0,3,"<a href=\"silex\/src\/Silex\/CallbackResolver.php.html#34\">CallbackResolver::isValid<\/a>"],[0,3,"<a href=\"silex\/src\/Silex\/CallbackResolver.php.html#48\">CallbackResolver::convertCallback<\/a>"],[0,2,"<a href=\"silex\/src\/Silex\/CallbackResolver.php.html#74\">CallbackResolver::resolveCallback<\/a>"],[100,1,"<a href=\"silex\/src\/Silex\/Controller.php.html#45\">Controller::__construct<\/a>"],[100,1,"<a href=\"silex\/src\/Silex\/Controller.php.html#55\">Controller::getRoute<\/a>"],[100,1,"<a href=\"silex\/src\/Silex\/Controller.php.html#65\">Controller::getRouteName<\/a>"],[75,2,"<a href=\"silex\/src\/Silex\/Controller.php.html#77\">Controller::bind<\/a>"],[75,2,"<a href=\"silex\/src\/Silex\/Controller.php.html#88\">Controller::__call<\/a>"],[100,1,"<a href=\"silex\/src\/Silex\/Controller.php.html#104\">Controller::freeze<\/a>"],[0,1,"<a href=\"silex\/src\/Silex\/Controller.php.html#109\">Controller::generateRouteName<\/a>"],[100,1,"<a href=\"silex\/src\/Silex\/ControllerCollection.php.html#49\">ControllerCollection::__construct<\/a>"],[100,1,"<a href=\"silex\/src\/Silex\/ControllerCollection.php.html#54\">ControllerCollection::anonymous function<\/a>"],[55.555555555556,4,"<a href=\"silex\/src\/Silex\/ControllerCollection.php.html#67\">ControllerCollection::mount<\/a>"],[100,2,"<a href=\"silex\/src\/Silex\/ControllerCollection.php.html#92\">ControllerCollection::match<\/a>"],[100,1,"<a href=\"silex\/src\/Silex\/ControllerCollection.php.html#110\">ControllerCollection::get<\/a>"],[100,1,"<a href=\"silex\/src\/Silex\/ControllerCollection.php.html#123\">ControllerCollection::post<\/a>"],[100,1,"<a href=\"silex\/src\/Silex\/ControllerCollection.php.html#136\">ControllerCollection::put<\/a>"],[100,1,"<a href=\"silex\/src\/Silex\/ControllerCollection.php.html#149\">ControllerCollection::delete<\/a>"],[0,1,"<a href=\"silex\/src\/Silex\/ControllerCollection.php.html#162\">ControllerCollection::options<\/a>"],[0,1,"<a href=\"silex\/src\/Silex\/ControllerCollection.php.html#175\">ControllerCollection::patch<\/a>"],[0,3,"<a href=\"silex\/src\/Silex\/ControllerCollection.php.html#180\">ControllerCollection::__call<\/a>"],[75,2,"<a href=\"silex\/src\/Silex\/ControllerCollection.php.html#200\">ControllerCollection::flush<\/a>"],[68.75,6,"<a href=\"silex\/src\/Silex\/ControllerCollection.php.html#211\">ControllerCollection::doFlush<\/a>"],[100,1,"<a href=\"silex\/src\/Silex\/EventListener\/ConverterListener.php.html#36\">ConverterListener::__construct<\/a>"],[57.142857142857,4,"<a href=\"silex\/src\/Silex\/EventListener\/ConverterListener.php.html#47\">ConverterListener::onKernelController<\/a>"],[100,1,"<a href=\"silex\/src\/Silex\/EventListener\/ConverterListener.php.html#60\">ConverterListener::getSubscribedEvents<\/a>"],[100,1,"<a href=\"silex\/src\/Silex\/EventListener\/MiddlewareListener.php.html#35\">MiddlewareListener::__construct<\/a>"],[41.666666666667,5,"<a href=\"silex\/src\/Silex\/EventListener\/MiddlewareListener.php.html#45\">MiddlewareListener::onKernelRequest<\/a>"],[45.454545454545,5,"<a href=\"silex\/src\/Silex\/EventListener\/MiddlewareListener.php.html#70\">MiddlewareListener::onKernelResponse<\/a>"],[100,1,"<a href=\"silex\/src\/Silex\/EventListener\/MiddlewareListener.php.html#88\">MiddlewareListener::getSubscribedEvents<\/a>"],[100,6,"<a href=\"silex\/src\/Silex\/EventListener\/StringToResponseListener.php.html#31\">StringToResponseListener::onKernelView<\/a>"],[100,1,"<a href=\"silex\/src\/Silex\/EventListener\/StringToResponseListener.php.html#45\">StringToResponseListener::getSubscribedEvents<\/a>"],[100,1,"<a href=\"silex\/src\/Silex\/ExceptionHandler.php.html#30\">ExceptionHandler::__construct<\/a>"],[0,2,"<a href=\"silex\/src\/Silex\/ExceptionHandler.php.html#35\">ExceptionHandler::onSilexError<\/a>"],[100,1,"<a href=\"silex\/src\/Silex\/ExceptionHandler.php.html#52\">ExceptionHandler::getSubscribedEvents<\/a>"],[100,1,"<a href=\"silex\/src\/Silex\/Provider\/ExceptionHandlerServiceProvider.php.html#16\">ExceptionHandlerServiceProvider::register<\/a>"],[100,1,"<a href=\"silex\/src\/Silex\/Provider\/ExceptionHandlerServiceProvider.php.html#18\">ExceptionHandlerServiceProvider::anonymous function<\/a>"],[100,2,"<a href=\"silex\/src\/Silex\/Provider\/ExceptionHandlerServiceProvider.php.html#26\">ExceptionHandlerServiceProvider::subscribe<\/a>"],[61.111111111111,5,"<a href=\"silex\/src\/Silex\/Provider\/HttpKernelServiceProvider.php.html#33\">HttpKernelServiceProvider::register<\/a>"],[100,1,"<a href=\"silex\/src\/Silex\/Provider\/HttpKernelServiceProvider.php.html#80\">HttpKernelServiceProvider::anonymous function<\/a>"],[100,1,"<a href=\"silex\/src\/Silex\/Provider\/HttpKernelServiceProvider.php.html#88\">HttpKernelServiceProvider::subscribe<\/a>"],[100,1,"<a href=\"silex\/src\/Silex\/Provider\/Routing\/LazyRequestMatcher.php.html#28\">LazyRequestMatcher::__construct<\/a>"],[75,2,"<a href=\"silex\/src\/Silex\/Provider\/Routing\/LazyRequestMatcher.php.html#38\">LazyRequestMatcher::getRequestMatcher<\/a>"],[100,1,"<a href=\"silex\/src\/Silex\/Provider\/Routing\/LazyRequestMatcher.php.html#51\">LazyRequestMatcher::matchRequest<\/a>"],[0,9,"<a href=\"silex\/src\/Silex\/Provider\/Routing\/RedirectableUrlMatcher.php.html#27\">RedirectableUrlMatcher::redirect<\/a>"],[100,1,"<a href=\"silex\/src\/Silex\/Provider\/Routing\/RedirectableUrlMatcher.php.html#50\">RedirectableUrlMatcher::anonymous function<\/a>"],[100,3,"<a href=\"silex\/src\/Silex\/Provider\/RoutingServiceProvider.php.html#33\">RoutingServiceProvider::register<\/a>"],[100,1,"<a href=\"silex\/src\/Silex\/Provider\/RoutingServiceProvider.php.html#75\">RoutingServiceProvider::anonymous function<\/a>"],[100,1,"<a href=\"silex\/src\/Silex\/Provider\/RoutingServiceProvider.php.html#83\">RoutingServiceProvider::subscribe<\/a>"],[100,1,"<a href=\"silex\/src\/Silex\/Provider\/Twig\/RuntimeLoader.php.html#26\">RuntimeLoader::__construct<\/a>"],[0,2,"<a href=\"silex\/src\/Silex\/Provider\/Twig\/RuntimeLoader.php.html#35\">RuntimeLoader::load<\/a>"],[78.846153846154,14,"<a href=\"silex\/src\/Silex\/Provider\/TwigServiceProvider.php.html#37\">TwigServiceProvider::register<\/a>"],[100,1,"<a href=\"silex\/src\/Silex\/Provider\/TwigServiceProvider.php.html#162\">TwigServiceProvider::anonymous function<\/a>"],[100,1,"<a href=\"silex\/src\/Silex\/Route.php.html#38\">Route::__construct<\/a>"],[0,1,"<a href=\"silex\/src\/Silex\/Route.php.html#51\">Route::run<\/a>"],[100,1,"<a href=\"silex\/src\/Silex\/Route.php.html#66\">Route::assert<\/a>"],[100,1,"<a href=\"silex\/src\/Silex\/Route.php.html#81\">Route::value<\/a>"],[0,1,"<a href=\"silex\/src\/Silex\/Route.php.html#96\">Route::convert<\/a>"],[100,1,"<a href=\"silex\/src\/Silex\/Route.php.html#112\">Route::method<\/a>"],[0,1,"<a href=\"silex\/src\/Silex\/Route.php.html#126\">Route::host<\/a>"],[0,1,"<a href=\"silex\/src\/Silex\/Route.php.html#138\">Route::requireHttp<\/a>"],[0,1,"<a href=\"silex\/src\/Silex\/Route.php.html#150\">Route::requireHttps<\/a>"],[0,1,"<a href=\"silex\/src\/Silex\/Route.php.html#164\">Route::before<\/a>"],[0,1,"<a href=\"silex\/src\/Silex\/Route.php.html#180\">Route::after<\/a>"],[0,1,"<a href=\"silex\/src\/Silex\/Route.php.html#196\">Route::when<\/a>"]], 'Method Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getComplexityData(data, label) {
+    var values = [];
+    $.each(data, function(key) {
+      var value = Math.round(data[key][0]*100) / 100;
+      values.push({
+        x: value,
+        y: data[key][1],
+        class: data[key][2],
+        size: 0.05,
+        shape: 'diamond'
+      });
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+});
+  </script>
+ </body>
+</html>

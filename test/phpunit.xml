@@ -13,6 +13,10 @@
 	<testsuite name="CodeEducation">
 		<directory>.</directory>
 	</testsuite>
+	<logging>
+		<log type="coverage-html" target="./log/report" charset="UTF-8" yui="true" highlight="true" lowUpperBound="35" highUpperBound="70" />
+		<log type="testdox-html" target="./log/testdocx.html" />
+	</logging>
 </phpunit>
 
 
