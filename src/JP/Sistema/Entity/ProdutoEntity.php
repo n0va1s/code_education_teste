@@ -66,7 +66,7 @@ class ProdutoEntity
 
     public function setNome($nome)
     {
-        if (!isset($nome)) {
+        if (empty($nome)) {
             throw new \InvalidArgumentException();
         }
         $this->nome = $nome;
