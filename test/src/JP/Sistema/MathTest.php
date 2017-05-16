@@ -39,23 +39,23 @@ class MathTest extends \PHPUnit_Framework_TestCase
         $resultado = $m->somar(10, 'ABC');
     }
 
-    public function romanoProvider()
+    public function romanoArabicoProvider()
     {
         return [
             ['I', 1],
             ['IV', 4],
             ['V', 5],
-            ['VII', 7],
+            ['IX', 9],
             ['X', 10],
             ['L', 50],
             ['C', 100],
             ['DC', 600],
-            ['M', 1000]
+            ['M', 1000],
         ];
     }
 
     /**
-    * @dataProvider romanoProvider
+    * @dataProvider romanoArabicoProvider
     */
     public function testArabicoParaRomano($romano, $arabico)
     {
@@ -71,5 +71,24 @@ class MathTest extends \PHPUnit_Framework_TestCase
     {
         $m = new \JP\Sistema\Math();
         $resultado = $m->converterRomano('ABC');
+    }
+
+    /**
+    * @dataProvider romanoArabicoProvider
+    */
+    public function testRomanoParaArabico($romano, $arabico)
+    {
+        $m = new \JP\Sistema\Math();
+        $resultado = $m->converterArabico($romano);
+        $this->assertEquals($arabico, $resultado);
+    }
+
+    /**
+    * @expectedException InvalidArgumentException
+    */
+    public function testRomanoNumerico()
+    {
+        $m = new \JP\Sistema\Math();
+        $resultado = $m->converterArabico(10);
     }
 }

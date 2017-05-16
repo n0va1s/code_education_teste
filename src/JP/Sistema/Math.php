@@ -30,4 +30,23 @@ class Math
         }
         return $conversao;
     }
+
+    public function converterArabico($valor)
+    {
+        if (!is_string($valor)) {
+            throw new \InvalidArgumentException("O valor informado não está em formato romano", 1);
+        }
+        $dados = array('M' => 1000, 'CM' => 900, 'D' => 500, 'CD' => 400, 'C' => 100, 'XC' => 90, 'L' => 50, 'XL' => 40, 'X' => 10, 'IX' => 9, 'V' => 5, 'IV' => 4, 'I' => 1);
+        $conversao = null;
+        foreach ($dados as $rom => $ara) {
+            while (strpos($valor, $rom) === 0) {
+                $conversao += $ara;
+                echo $conversao;
+                $valor = substr($valor, strlen($rom));
+                echo $valor;
+                break;
+            }
+        }
+        return $conversao;
+    }
 }
