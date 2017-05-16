@@ -88,9 +88,7 @@ class ProdutoService
             'id' => $produto->getId(),
             'nome' => $produto->getNome() ,
             'descricao' => $produto->getDescricao(),
-            'valor' => $produto->getValor(),
-            'categoria' => $produto->getCategoria(),
-            'tag' => $produto->getTag()
+            'valor' => $produto->getValor()
             );
     }
 }

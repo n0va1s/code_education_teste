@@ -1,6 +1,7 @@
 *.lock
 *.phar
 /data/
+/test/log/
 /vendor/
 .idea
 .*~

@@ -76,15 +76,10 @@ class ProdutoControllerTest extends WebTestCase
 
     public function testInserirProdutoAPI()
     {
-<<<<<<< HEAD
-        $this->client->request('POST', '/produto/api/inserir', array('nomProduto'=>'Nome do Produto 1',
-            'desProduto'=>'Descrição do Produto 1',
-            'valProduto'=>'100'));
-=======
         $entrada = array('nomProduto'=>'Nome do Produto API',
             'desProduto'=>'Descricao do Produto API', 'valProduto'=>'88.88');
         $this->client->request('POST', '/produto/api/inserir', $entrada);
->>>>>>> db2744fa11500f071a0b688277ac98bfb8ba0737
+
         $this->assertEquals(200, $this->client->getResponse()->getStatusCode(), "HTTP status code nao confere");
         $this->assertTrue($this->client->getResponse()->headers->contains('Content-Type', 'application/json'));
         $saida = json_decode($this->client->getResponse()->getContent(), true);
@@ -96,15 +91,10 @@ class ProdutoControllerTest extends WebTestCase
      */
     public function testAtualizarProdutoAPI(int $id)
     {
-<<<<<<< HEAD
-        $this->client->request('PUT', '/produto/api/atualizar/'.$id, array('nomProduto'=>'Nome do Produto 1',
-            'desProduto'=>'Descrição do Produto 1',
-            'valProduto'=>'100'));
-=======
         $entrada = array('nomProduto'=>'Nome do Produto API Atualizado',
             'desProduto'=>'Descricao do Produto API Atualizado', 'valProduto'=>'77.77');
         $this->client->request('PUT', '/produto/api/atualizar/'.$id, $entrada);
->>>>>>> db2744fa11500f071a0b688277ac98bfb8ba0737
+
         $this->assertEquals(200, $this->client->getResponse()->getStatusCode(), "HTTP status code nao confere");
         $this->assertTrue($this->client->getResponse()->headers->contains('Content-Type', 'application/json'));
         $saida = json_decode($this->client->getResponse()->getContent(), true);

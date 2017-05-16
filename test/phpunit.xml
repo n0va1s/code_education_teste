@@ -17,6 +17,14 @@
 		<log type="coverage-html" target="./log/report" charset="UTF-8" yui="true" highlight="true" lowUpperBound="35" highUpperBound="70" />
 		<log type="testdox-html" target="./log/testdocx.html" />
 	</logging>
+	<filter>
+        <whitelist addUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">src</directory>
+            <exclude>
+             <file>bootstrap.php</file>
+            </exclude>
+        </whitelist>
+    </filter>
 </phpunit>
 
 
